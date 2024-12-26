@@ -61,7 +61,7 @@ def handle_message(event):
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
 
-        if text == '文字':
+        if text == '嗨1~~!':
             line_bot_api.reply_message_with_http_info(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
@@ -71,7 +71,7 @@ def handle_message(event):
                 )
             )
 
-        elif text == '表情符號':
+        elif text == '我要抽表情符號':
             # Emojis 陣列：儲存你的表情符號資料，如果觸發才會回覆以下表情符號
             emojis = [
                 # index：索引值、product_id：表情符號庫、emoji_id：第幾張表情符號
@@ -89,7 +89,7 @@ def handle_message(event):
                 )
             )
 
-        elif text == '貼圖':
+        elif text == '我要抽貼圖':
             line_bot_api.reply_message_with_http_info(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
@@ -101,9 +101,9 @@ def handle_message(event):
                 )
             )
 
-        elif text == '圖片':
+        elif text == '抽抽':
             # 隨機亂數：從 1 ~ 10 裡面隨機挑選一個數字
-            image_index = str(random.randint(1,10))
+            image_index = str(random.randint(1,73))
             # 圖片位址：讓 Vercel 伺服器知道你的圖片位址在哪裡（範例：static/images/image1.jpg）
             url = request.url_root + 'static/images/image' + image_index + '.jpg'
             line_bot_api.reply_message_with_http_info(
@@ -115,7 +115,7 @@ def handle_message(event):
                 )
             )
         
-        elif text == '聲音':
+        elif text == '我要抽聲音':
             # 隨機亂數：從 1 ~ 10 裡面隨機挑選一個數字
             audio_index = str(random.randint(1,10))
             # 音訊位址：讓 Vercel 伺服器知道你的音訊位址在哪裡（範例：static/audios/audio1.mp3）
@@ -129,7 +129,7 @@ def handle_message(event):
                 )
             )
 
-        elif text == '影片':
+        elif text == '我要抽影片':
             # 隨機亂數：從 1 ~ 10 裡面隨機挑選一個數字
             video_index = str(random.randint(1,10))
             # 音訊位址：讓 Vercel 伺服器知道你的音訊位址在哪裡（範例：static/videos/video1.mp4）
@@ -143,7 +143,7 @@ def handle_message(event):
                 )
             )
 
-        elif text == '位置':
+        elif text == '我要抽位置':
             line_bot_api.reply_message_with_http_info(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
