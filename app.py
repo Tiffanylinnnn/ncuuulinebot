@@ -77,13 +77,13 @@ def handle_message(event):
                 # index：索引值、product_id：表情符號庫、emoji_id：第幾張表情符號
                 # 網址：https://developers.line.biz/en/docs/messaging-api/emoji-list/#line-emoji-definitions
                 Emoji(index=0, product_id="5ac1bfd5040ab15980c9b435", emoji_id="001"),
-                Emoji(index=0, product_id="5ac1bfd5040ab15980c9b435", emoji_id="001")
+                Emoji(index=12, product_id="5ac1bfd5040ab15980c9b435", emoji_id="002")
             ]
             line_bot_api.reply_message_with_http_info(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
                     messages=[
-                        # $ 的位置會放表情符號，依照 index 順序放
+                        # $ 的位置會放表情符號，依照 index 順序放，以字數計算
                         TextMessage(text='$ Line 表情符號 $', emojis=emojis)
                     ]
                 )
