@@ -119,7 +119,7 @@ def handle_message(event):
             # 隨機亂數：從 1 ~ 10 裡面隨機挑選一個數字
             audio_index = str(random.randint(1,10))
             # 音訊位址：讓 Vercel 伺服器知道你的音訊位址在哪裡（範例：static/audios/audio1.mp3）
-            url = request.url_root + 'static/audios/audio' + audio_index + '.mp3'
+            url = request.url_root + 'static/audios/sound' + audio_index + '.mp3'
             line_bot_api.reply_message_with_http_info(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
